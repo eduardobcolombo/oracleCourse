@@ -1,6 +1,3 @@
-# oracleCourse
-some instructions of oracle course
-
 SELECT * FROM dual;
 SELECT 1 FROM dual;
 SELECT * FROM TCLIENTES;
@@ -48,6 +45,18 @@ SELECT ROUND(dbms_random.value(1,100)) FROM dual;
 SELECT SYSDATE FROM DUAL;
 SELECT nome, ROUND(((SYSDATE - dt_nascimento)/7),2) semanas
 FROM TCLIENTES WHERE estado = 'SP';
+SELECT months_between('01/01/2015', '04/09/2015')
+  ,ADD_MONTHS('01/01/2015',6)
+  ,NEXT_DAY('01/01/2015','DOMINGO')
+  ,LAST_DAY('01/01/2015')
+  ,TRUNC(SYSDATE)
+FROM dual;
 
-
+SELECT estado,
+  CASE estado
+    WHEN 'RS' THEN 'Rio Grande do Sul'
+    WHEN 'SP' THEN 'São Paulo'
+    else ' '
+  END nome_estado
+FROM TCLIENTES;
 
